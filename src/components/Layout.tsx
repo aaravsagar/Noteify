@@ -12,7 +12,7 @@ export function Layout() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="text-2xl font-bold text-[var(--text-primary)]">
-              Notey
+              Noteify
             </Link>
             <div className="flex space-x-4">
               <NavLink to="/notes" icon={<Notebook />} label="Notes" />
