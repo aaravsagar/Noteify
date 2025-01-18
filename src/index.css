@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .light {
+    --bg-primary: theme('colors.white');
+    --bg-secondary: theme('colors.gray.100');
+    --text-primary: theme('colors.gray.900');
+    --text-secondary: theme('colors.gray.600');
+    --border-color: theme('colors.gray.200');
+    --hover-color: theme('colors.gray.50');
+    --accent-color: theme('colors.blue.500');
+    --accent-hover: theme('colors.blue.600');
+    --danger-color: theme('colors.red.500');
+    --danger-hover: theme('colors.red.600');
+    --success-color: theme('colors.green.500');
+    --success-hover: theme('colors.green.600');
+  }
+
+  .dark {
+    --bg-primary: theme('colors.gray.900');
+    --bg-secondary: theme('colors.gray.800');
+    --text-primary: theme('colors.gray.100');
+    --text-secondary: theme('colors.gray.400');
+    --border-color: theme('colors.gray.700');
+    --hover-color: theme('colors.gray.700');
+    --accent-color: theme('colors.blue.400');
+    --accent-hover: theme('colors.blue.500');
+    --danger-color: theme('colors.red.400');
+    --danger-hover: theme('colors.red.500');
+    --success-color: theme('colors.green.400');
+    --success-hover: theme('colors.green.500');
+  }
+
+  .nord {
+    --bg-primary: #2E3440;
+    --bg-secondary: #3B4252;
+    --text-primary: #ECEFF4;
+    --text-secondary: #D8DEE9;
+    --border-color: #4C566A;
+    --hover-color: #434C5E;
+    --accent-color: #88C0D0;
+    --accent-hover: #81A1C1;
+    --danger-color: #BF616A;
+    --danger-hover: #D08770;
+    --success-color: #A3BE8C;
+    --success-hover: #8FBCBB;
+  }
+
+  .dracula {
+    --bg-primary: #282A36;
+    --bg-secondary: #44475A;
+    --text-primary: #F8F8F2;
+    --text-secondary: #BFBFBF;
+    --border-color: #6272A4;
+    --hover-color: #383A59;
+    --accent-color: #BD93F9;
+    --accent-hover: #FF79C6;
+    --danger-color: #FF5555;
+    --danger-hover: #FF6E6E;
+    --success-color: #50FA7B;
+    --success-hover: #69FF94;
+  }
+
+  .monokai {
+    --bg-primary: #272822;
+    --bg-secondary: #3E3D32;
+    --text-primary: #F8F8F2;
+    --text-secondary: #CFCFC2;
+    --border-color: #75715E;
+    --hover-color: #35352A;
+    --accent-color: #66D9EF;
+    --accent-hover: #A6E22E;
+    --danger-color: #F92672;
+    --danger-hover: #FD971F;
+    --success-color: #A6E22E;
+    --success-hover: #66D9EF;
+  }
+
+  .solarized {
+    --bg-primary: #002B36;
+    --bg-secondary: #073642;
+    --text-primary: #839496;
+    --text-secondary: #93A1A1;
+    --border-color: #586E75;
+    --hover-color: #003B4B;
+    --accent-color: #2AA198;
+    --accent-hover: #268BD2;
+    --danger-color: #DC322F;
+    --danger-hover: #CB4B16;
+    --success-color: #859900;
+    --success-hover: #B58900;
+  }
+
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)];
+  }
+
+  select, input[type="text"], input[type="number"], input[type="datetime-local"] {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] border-[var(--border-color)];
+  }
+
+  select option {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)];
+  }
+
+  .text-theme-secondary {
+    @apply text-[var(--text-secondary)];
+  }
+
+  .bg-theme-secondary {
+    @apply bg-[var(--bg-secondary)];
+  }
+
+  .border-theme {
+    @apply border-[var(--border-color)];
+  }
+
+  .hover-theme {
+    @apply hover:bg-[var(--hover-color)];
+  }
+
+  .accent-theme {
+    @apply text-[var(--accent-color)] hover:text-[var(--accent-hover)];
+  }
+
+  .btn-primary {
+    @apply bg-[var(--accent-color)] hover:bg-[var(--accent-hover)] text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:bg-[var(--hover-color)];
+  }
+
+  .btn-danger {
+    @apply bg-[var(--danger-color)] hover:bg-[var(--danger-hover)] text-white;
+  }
+
+  .btn-success {
+    @apply bg-[var(--success-color)] hover:bg-[var(--success-hover)] text-white;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
